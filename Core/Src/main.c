@@ -56,7 +56,7 @@ static void MX_USART1_UART_Init(void);
 static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
 extern int _write(int file, char *ptr, int len);
-volatile size_t mute = 0;
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -107,6 +107,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   /* Stack defines */
   struct keypad_string *string;
+  volatile size_t mute = 0;
   string = (struct keypad_string *)malloc(sizeof(struct keypad_string));
   string->top = -1;
   volatile uint8_t text_input = 0;
@@ -115,7 +116,7 @@ int main(void)
   char *string_clear;
   volatile size_t i, j, capacity = 1, enable_clear_input = 0, last_string_len;
   string->array = (uint8_t *)malloc(sizeof(uint8_t));
-
+  
   typedef enum
   {
     PRESSED,
