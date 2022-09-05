@@ -156,7 +156,6 @@ int main(void)
       }
       break;
     case DEBOUNCE:
-      printf("DEBOUNCE:%d\n", HAL_GPIO_ReadPin(MUTE_GPIO_Port, MUTE_Pin));
       HAL_Delay(100);
       if (!HAL_GPIO_ReadPin(MUTE_GPIO_Port, MUTE_Pin))
       {

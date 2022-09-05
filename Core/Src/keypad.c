@@ -137,7 +137,6 @@ uint8_t keyscan()
 		HAL_Delay(75);
 		if (!HAL_GPIO_ReadPin(C2_GPIO_Port, C2_Pin))
 		{
-			printf("R3C4 GPIO STATUS: %d\r\n", HAL_GPIO_ReadPin(C2_GPIO_Port, C2_Pin));
 			return '0';
 		}
 	}
@@ -153,7 +152,6 @@ uint8_t keyscan()
 		HAL_Delay(75);
 		if (!HAL_GPIO_ReadPin(C4_GPIO_Port, C4_Pin))
 		{
-			printf("R3C4 GPIO STATUS: %d\r\n", HAL_GPIO_ReadPin(C4_GPIO_Port, C4_Pin));
 			return '/';
 		}
 	}

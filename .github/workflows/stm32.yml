@@ -16,6 +16,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt-get install git build-essential libusb-1.0.0-dev cmake gcc-arm-none-eabi
+          
       - name: build
         run: |
           make -j2
