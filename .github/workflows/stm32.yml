@@ -1,0 +1,31 @@
+name: build stm32
+
+on: 
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+      
+      - name: install dependencies
+        run: |
+          sudo apt update
+          sudo apt-get install git build-essential libusb-1.0.0-dev cmake gcc-arm-none-eabi
+      - name: build
+        run: |
+          make -j2
+      
+      - name: upload github action artifact
+        uses:
+          actions/upload-artifact@v2
+        with:
+          name: calculator.hex
+          path: build/calculator.hex
+          
+
+

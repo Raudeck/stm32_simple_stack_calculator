@@ -1,4 +1,5 @@
 *.ioc
 .*
+!.github
 !.gitignore
 build
